@@ -6,7 +6,7 @@ import { Page } from "../models/Page";
 import { Post } from "../models/Post";
 import { Tag } from "../models/Tag";
 import { Comment } from "../models/Comment";
-import { Like } from "typeorm";
+import { Like } from "../models/Like";
 
 const AppDataSource = new DataSource({
     type: "mysql",
