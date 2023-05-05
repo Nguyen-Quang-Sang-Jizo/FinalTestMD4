@@ -22,6 +22,12 @@ export class Post {
   @Column({ type: "timestamp", default: () => "CURRENT_TIMESTAMP", onUpdate: "CURRENT_TIMESTAMP" })
   date_updated: Date;
 
+  @Column({type: 'text'})
+  image: string;
+
+  @Column({type: 'varchar'})
+  status: string;
+
   @ManyToOne(() => User, user => user.posts)
   author: User;
 
