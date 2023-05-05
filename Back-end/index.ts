@@ -2,13 +2,13 @@ import express, {Request, Response} from "express";
 import cookieParser from "cookie-parser"
 import bodyParser from "body-parser";
 import { connectDB } from "./src/configs/data-source";
-import * as dotenv from "dotenv";
+import router from "./src/routers";
 import cors from "cors"
 
 const PORT = 3000;
 const app = express();
 
-dotenv.config();
+
 
 
 
@@ -18,6 +18,7 @@ app.use(cookieParser(process.env.USER_CODE_SECRET))
 connectDB();
 
 app.use(cors());
+router(app);
 
 app.listen(PORT, () => {
     console.log("App running on port: " + PORT)
