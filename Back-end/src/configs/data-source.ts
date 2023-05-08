@@ -6,6 +6,7 @@ import { Page } from "../models/Page";
 import { Post } from "../models/Post";
 import { Tag } from "../models/Tag";
 import { Comment } from "../models/Comment";
+import { Like } from "../models/Like";
 
 const AppDataSource = new DataSource({
     type: "mysql",
@@ -16,7 +17,7 @@ const AppDataSource = new DataSource({
     database: "module4",
     synchronize: true,
     logging: false,
-    entities: [User, Category, Comment, Page, Post, Tag],
+    entities: [User, Category, Comment, Page, Post, Tag, Like],
     migrations: ["./dist/src/migrations/*.js"],
 });
 
