@@ -38,6 +38,14 @@ __decorate([
     __metadata("design:type", Date)
 ], Post.prototype, "date_updated", void 0);
 __decorate([
+    (0, typeorm_1.Column)({ type: 'text' }),
+    __metadata("design:type", String)
+], Post.prototype, "image", void 0);
+__decorate([
+    (0, typeorm_1.Column)({ type: 'varchar' }),
+    __metadata("design:type", String)
+], Post.prototype, "status", void 0);
+__decorate([
     (0, typeorm_1.ManyToOne)(() => User_1.User, user => user.posts),
     __metadata("design:type", User_1.User)
 ], Post.prototype, "author", void 0);

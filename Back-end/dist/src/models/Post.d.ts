@@ -8,6 +8,8 @@ export declare class Post {
     content: string;
     date_created: Date;
     date_updated: Date;
+    image: string;
+    status: string;
     author: User;
     category: Category;
     tags: Tag[];
