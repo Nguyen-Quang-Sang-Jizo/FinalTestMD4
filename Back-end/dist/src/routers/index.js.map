@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 {"version":3,"file":"index.js","sourceRoot":"","sources":["../../../src/routers/index.ts"],"names":[],"mappings":";;;;;AAAA,gEAAuC;AACvC,gEAAwC;AAExC,MAAM,MAAM,GAAG,CAAC,GAAG,EAAE,EAAE;IACnB,GAAG,CAAC,GAAG,CAAC,OAAO,EAAE,qBAAU,CAAC,CAAC;IAC7B,GAAG,CAAC,GAAG,CAAC,OAAO,EAAE,qBAAW,CAAC,CAAC;AAClC,CAAC,CAAC;AAEF,kBAAe,MAAM,CAAC"}
+=======
+{"version":3,"file":"index.js","sourceRoot":"","sources":["../../../src/routers/index.ts"],"names":[],"mappings":";;;;;AAAA,gEAAuC;AACvC,8DAAsC;AACtC,sEAA8C;AAE9C,MAAM,MAAM,GAAG,CAAC,GAAG,EAAE,EAAE;IACnB,GAAG,CAAC,GAAG,CAAC,OAAO,EAAE,qBAAU,CAAC,CAAC;IAC7B,GAAG,CAAC,GAAG,CAAC,OAAO,EAAE,oBAAU,CAAC,CAAC;IAC7B,GAAG,CAAC,GAAG,CAAC,aAAa,EAAE,wBAAc,CAAC,CAAC;AAE3C,CAAC,CAAC;AAEF,kBAAe,MAAM,CAAC"}
+>>>>>>> 7a2fd818b5188a0b66c427a7929b3d150c390235

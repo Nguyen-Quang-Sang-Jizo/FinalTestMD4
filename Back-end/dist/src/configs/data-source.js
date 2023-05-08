@@ -9,6 +9,7 @@ const Page_1 = require("../models/Page");
 const Post_1 = require("../models/Post");
 const Tag_1 = require("../models/Tag");
 const Comment_1 = require("../models/Comment");
+const Like_1 = require("../models/Like");
 const AppDataSource = new typeorm_1.DataSource({
     type: "mysql",
     host: "localhost",
@@ -18,7 +19,7 @@ const AppDataSource = new typeorm_1.DataSource({
     database: "module4",
     synchronize: true,
     logging: false,
-    entities: [User_1.User, Category_1.Category, Comment_1.Comment, Page_1.Page, Post_1.Post, Tag_1.Tag],
+    entities: [User_1.User, Category_1.Category, Comment_1.Comment, Page_1.Page, Post_1.Post, Tag_1.Tag, Like_1.Like],
     migrations: ["./dist/src/migrations/*.js"],
 });
 exports.AppDataSource = AppDataSource;
