@@ -6,7 +6,6 @@ const router = (app) => {
     app.use('/auth', userRouter);
     app.use('/post', postRouter);
     app.use('/categories', categoryRouter);
-
 };
 
 export default router;
