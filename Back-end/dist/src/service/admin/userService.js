@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const data_source_1 = require("../configs/data-source");
-const User_1 = require("../models/User");
+const data_source_1 = require("../../configs/data-source");
+const User_1 = require("../../models/User");
 class AdminService {
     constructor() {
         this.getAll = async () => {
@@ -14,4 +14,4 @@ class AdminService {
     }
 }
 exports.default = new AdminService();
-//# sourceMappingURL=adminService.js.map
+//# sourceMappingURL=userService.js.map

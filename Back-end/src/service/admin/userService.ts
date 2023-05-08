@@ -1,5 +1,5 @@
-import { AppDataSource } from "../configs/data-source";
-import { User } from "../models/User";
+import { AppDataSource } from "../../configs/data-source";
+import { User } from "../../models/User";
 
 class AdminService {
     private adminRepository;
@@ -15,7 +15,6 @@ class AdminService {
         this.adminRepository.delete(idDelete)
     }
 
-    
 }
 
 export default new AdminService()
