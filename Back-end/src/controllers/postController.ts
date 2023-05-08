@@ -16,7 +16,6 @@ class PostController {
         res.status(200).json(listPost)
     }
 
-
     addPost = async (req: Request, res: Response) => {
         await this.postService.add(req.body);
         if (!req.body.name) {
