@@ -17,17 +17,29 @@ class PostService {
             return post;
         } catch (error) {
             console.log(`Error ${error} on postSearch in adminPostService`);
+            throw error;
         }
     }
 
     postFilter = async (filter) => {
         try {
             let filterPost = await this.postRepository.find({
-                where: {category: filter}
+                where: {category: Like('{$%filter%}')}
             })
             return filterPost;
         } catch (error) {
             console.log(`Error ${error} on postFilter in adminPostService`);
+            throw error;
+        }
+    }
+
+    remove = async (id) => {
+        try {
+            await this.postRepository.delete(id);
+            console.log('Post removed')
+        } catch (error) {
+            console.log(`Error ${error} on remove in adminPostService`);
+            throw error;
         }
     }
 }
