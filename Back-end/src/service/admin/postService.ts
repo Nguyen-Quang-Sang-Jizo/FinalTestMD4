@@ -15,6 +15,7 @@ class PostService {
         
          return post;
      }
+     
 }
 
 export default new PostService();

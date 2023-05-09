@@ -12,7 +12,8 @@ class PostService {
     getAll = async () => {
         let posts = await this.postRepository.find({
             relations: {
-                category: true,
+                author: true,
+                category: true
             }
         });
         return posts;

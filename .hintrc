@@ -8,6 +8,8 @@
     "no-inline-styles": "off",
     "axe/text-alternatives": "off",
     "meta-charset-utf-8": "off",
-    "detect-css-reflows/composite": "off"
+    "detect-css-reflows/composite": "off",
+    "button-type": "off",
+    "axe/name-role-value": "off"
   }
 }

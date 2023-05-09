@@ -28,7 +28,7 @@ class UserService {
                         role: userFind.role
                     };
                     return jsonwebtoken_1.default.sign(payload, auth_1.SECRET, {
-                        expiresIn: 1000
+                        expiresIn: 3600 * 1000
                     });
                 }
                 else {

@@ -29,7 +29,7 @@ class UserService{
                     role: userFind.role
                 }
                 return jwt.sign(payload, SECRET, {
-                    expiresIn: 1000
+                    expiresIn: 3600*1000
                 })
             }else {
                 return 'Password is wrong'
