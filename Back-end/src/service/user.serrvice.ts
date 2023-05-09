@@ -4,7 +4,10 @@ import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 import {SECRET} from "../middleware/auth";
 
-class UserService{
+class UserService {
+    export
+    default
+    new
     private userRepository;
 
     constructor() {
@@ -12,28 +15,47 @@ class UserService{
     }
 
     registers = async (user) => {
-        user.password = await bcrypt.hash(user.password, 10);
-        return this.userRepository.save(user);
+        try {
+            user.password = await bcrypt.hash(user.password, 10);
+            return this.userRepository.save(user);
+        } catch (error) {
+            console.log(`Error ${error} on registers in userService`);
+        }
     }
 
     checkUser = async (user) => {
-        let userFind = await this.userRepository.findOneBy({username: user.username});
-        if(!userFind){
-            return 'User is not exist'
-        }else {
-            let passWordCompare = await bcrypt.compare(user.password, userFind.password);
-            if(passWordCompare){
-                let payload = {
-                    idUser: userFind.id,
-                    username: userFind.username,
-                    role: userFind.role
+        try {
+            let userFind = await this.userRepository.findOneBy({username: user.username});
+            if (!userFind) {
+                return 'User is not exist'
+            } else {
+                let passWordCompare = await bcrypt.compare(user.password, userFind.password);
+                if (passWordCompare) {
+                    let payload = {
+                        idUser: userFind.id,
+                        username: userFind.username,
+                        role: userFind.role
+                    }
+                    return jwt.sign(payload, SECRET, {
+                        expiresIn: 1000
+                    })
+                } else {
+                    return 'Password is wrong'
                 }
-                return jwt.sign(payload, SECRET, {
-                    expiresIn: 1000
-                })
-            }else {
-                return 'Password is wrong'
             }
+        } catch (error) {
+            console.log(`Error ${error} on checkUser in userService`);
+            throw error;
+        }
+    }
+
+    accountDelete = (idDelete) => {
+        try {
+            this.userRepository.delete(idDelete);
+            console.log('Account Deleted');
+        } catch (error) {
+            console.log(`Error ${error} on accountDelete in userService`);
+            throw error;
         }
     }
 }

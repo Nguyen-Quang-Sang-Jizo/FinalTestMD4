@@ -1,20 +1,48 @@
-import { AppDataSource } from "../../configs/data-source";
-import { User } from "../../models/User";
+import {AppDataSource} from "../../configs/data-source";
+import {User} from "../../models/User";
 
 class AdminService {
+    export
+    default
+    new
     private adminRepository;
+
     constructor() {
         this.adminRepository = AppDataSource.getRepository(User);
     }
 
     getAll = async () => {
-        return ( await this.adminRepository.find());
+        try {
+            return (await this.adminRepository.find());
+        } catch (error) {
+            console.log(`Error ${error} on getAll in adminUserService`);
+            throw error;
+        }
     }
 
     accountDelete = (idDelete) => {
-        this.adminRepository.delete(idDelete)
+        try {
+            this.adminRepository.delete(idDelete);
+            console.log('Account Deleted');
+        } catch (error) {
+            console.log(`Error ${error} on accountDelete in adminUserService`);
+            throw error;
+        }
     }
 
+    adminSearchUsername = async (username) => {
+        try {
+            let searchPeople = await this.adminRepository.find({
+                where: {
+                    username: username
+                }
+            });
+            return searchPeople;
+        } catch (error) {
+            console.log(`Error ${error} on adminSearchUsername in adminUserService`);
+            throw error;
+        }
+    }
 }
 
-export default new AdminService()
+export default new AdminService();
