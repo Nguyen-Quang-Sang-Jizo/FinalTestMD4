@@ -12,8 +12,10 @@ class PostService {
     postSearch = async (posts) => {
         try {
             let post = await this.postRepository.findBy({
-                title: Like(`%${posts}%`)
-            })
+                where: {
+                    title: Like(`${posts}%`)
+                }
+            });
             return post;
         } catch (error) {
             console.log(`Error ${error} on postSearch in adminPostService`);
@@ -24,7 +26,7 @@ class PostService {
     postFilter = async (filter) => {
         try {
             let filterPost = await this.postRepository.find({
-                where: {category: Like('{$%filter%}')}
+                where: {category: Like(`${filter}%`)}
             })
             return filterPost;
         } catch (error) {

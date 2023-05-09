@@ -1,5 +1,6 @@
 import {AppDataSource} from "../../configs/data-source";
 import {User} from "../../models/User";
+import {Like} from "typeorm";
 
 class AdminService {
     export
@@ -34,7 +35,7 @@ class AdminService {
         try {
             let searchPeople = await this.adminRepository.find({
                 where: {
-                    username: username
+                    username: Like(`${username}%`)
                 }
             });
             return searchPeople;
