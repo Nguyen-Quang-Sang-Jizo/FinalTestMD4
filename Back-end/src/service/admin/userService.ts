@@ -32,7 +32,8 @@ class AdminService {
         try {
             let searchPeople = await this.adminRepository.find({
                 where: {
-                    username: Like(`${username}%`)
+                    username: Like(`${username}%`),
+                    role: 'User'
                 }
             });
             return searchPeople;

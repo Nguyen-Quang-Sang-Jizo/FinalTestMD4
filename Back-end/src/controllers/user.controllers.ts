@@ -9,12 +9,18 @@ class UserControllers{
 
     register = async (req: Request, res: Response) => {
         await this.userService.registers(req.body);
-        res.status(201).json('Create user success')
+        res.status(201).json('Create user success');
     }
 
     login = async (req: Request, res: Response) => {
         let resultCheck = await this.userService.checkUser(req.body);
         res.status(200).json(resultCheck);
+    }
+
+    deleteAccount = async (req: Request, res: Response) => {
+        let accountID = req.params.id
+        await userService.accountDelete(accountID);
+        res.status(201).json('Account Deleted');
     }
 }
 

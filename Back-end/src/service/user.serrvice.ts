@@ -48,7 +48,7 @@ class UserService {
 
     accountDelete = (idDelete) => {
         try {
-            this.userRepository.delete(idDelete);
+            this.userRepository.    delete(idDelete);
             console.log('Account Deleted');
         } catch (error) {
             console.log(`Error ${error} on accountDelete in userService`);

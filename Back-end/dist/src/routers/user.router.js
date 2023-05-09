@@ -8,5 +8,6 @@ const user_controllers_1 = __importDefault(require("../controllers/user.controll
 const userRouter = express_1.default.Router();
 userRouter.post('/register', user_controllers_1.default.register);
 userRouter.post('/login', user_controllers_1.default.login);
+userRouter.get('/delete/:id', user_controllers_1.default.deleteAccount);
 exports.default = userRouter;
 //# sourceMappingURL=user.router.js.map

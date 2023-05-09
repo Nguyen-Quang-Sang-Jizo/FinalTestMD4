@@ -14,6 +14,11 @@ class UserControllers {
             let resultCheck = await this.userService.checkUser(req.body);
             res.status(200).json(resultCheck);
         };
+        this.deleteAccount = async (req, res) => {
+            let accountID = req.params.id;
+            await user_serrvice_1.default.accountDelete(accountID);
+            res.status(201).json('Account Deleted');
+        };
         this.userService = user_serrvice_1.default;
     }
 }
