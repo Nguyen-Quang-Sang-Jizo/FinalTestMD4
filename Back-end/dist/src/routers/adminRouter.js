@@ -8,6 +8,7 @@ const adminController_1 = __importDefault(require("../controllers/adminControlle
 const adminRouter = (0, express_1.Router)();
 adminRouter.get("/showAccount", adminController_1.default.findAll);
 adminRouter.delete("/accountDelete/:id", adminController_1.default.accountDelete);
-adminRouter.get("/postSearch/:name", adminController_1.default.postSerach);
+adminRouter.get("/postSearch/:name", adminController_1.default.postSearch);
+adminRouter.get('/searchName/:name', adminController_1.default.searchUsername);
 exports.default = adminRouter;
 //# sourceMappingURL=adminRouter.js.map

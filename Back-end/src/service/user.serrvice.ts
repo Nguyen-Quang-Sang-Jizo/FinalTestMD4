@@ -5,9 +5,6 @@ import jwt from "jsonwebtoken";
 import {SECRET} from "../middleware/auth";
 
 class UserService {
-    export
-    default
-    new
     private userRepository;
 
     constructor() {

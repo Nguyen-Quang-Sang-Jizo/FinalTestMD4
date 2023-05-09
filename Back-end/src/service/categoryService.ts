@@ -2,9 +2,6 @@ import {Category} from "../models/Category";
 import {AppDataSource} from "../configs/data-source";
 
 class CategoryService {
-    export
-    default
-    new
     private categoryRepository;
 
     constructor() {
@@ -23,7 +20,7 @@ class CategoryService {
 
     searchCategoryName = async (categoryName) => {
         try {
-            let searchCategory = await this.categoryRepository.find({
+            let searchCategory = await this.categoryRepository.findBy({
                 where: {
                     name: categoryName
                 }

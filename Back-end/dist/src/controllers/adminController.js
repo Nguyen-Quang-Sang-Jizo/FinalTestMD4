@@ -16,10 +16,15 @@ class AdminController {
             let account = this.adminService.accountDelete(idDelete);
             res.status(200).json(account);
         };
-        this.postSerach = async (req, res) => {
+        this.postSearch = async (req, res) => {
             let titleSearch = req.params.name;
             let post = await this.postService.postSearch(titleSearch);
             res.status(200).json(post);
+        };
+        this.searchUsername = async (req, res) => {
+            let username = req.params.name;
+            let user = await this.adminService.adminSearchUsername(username);
+            res.status(200).json(user);
         };
         this.adminService = userService_1.default;
         this.postService = postService_1.default;

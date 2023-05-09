@@ -5,8 +5,28 @@ const data_source_1 = require("../configs/data-source");
 class CategoryService {
     constructor() {
         this.getAll = async () => {
-            let categories = await this.categoryRepository.find();
-            return categories;
+            try {
+                let categories = await this.categoryRepository.find();
+                return categories;
+            }
+            catch (error) {
+                console.log(`Error ${error} on getAll in categoryService`);
+                throw error;
+            }
+        };
+        this.searchCategoryName = async (categoryName) => {
+            try {
+                let searchCategory = await this.categoryRepository.findBy({
+                    where: {
+                        name: categoryName
+                    }
+                });
+                return searchCategory;
+            }
+            catch (error) {
+                console.log(`Error ${error} on searchCategoryName in categoryService`);
+                throw error;
+            }
         };
         this.categoryRepository = data_source_1.AppDataSource.getRepository(Category_1.Category);
     }

@@ -21,10 +21,16 @@ class AdminController {
         res.status(200).json(account)
     }
 
-    postSerach = async (req: Request, res: Response) => {
+    postSearch = async (req: Request, res: Response) => {
         let titleSearch = req.params.name
         let post = await this.postService.postSearch(titleSearch)
         res.status(200).json(post)
+    }
+
+    searchUsername = async (req: Request, res: Response) => {
+        let username = req.params.name;
+        let user = await this.adminService.adminSearchUsername(username);
+        res.status(200).json(user);
     }
 
 }

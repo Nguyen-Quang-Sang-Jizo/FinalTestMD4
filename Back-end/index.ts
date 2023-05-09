@@ -11,7 +11,9 @@ const app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(cookieParser(process.env.USER_CODE_SECRET))
-connectDB();
+connectDB().then(() => {
+    console.log('Connect Database Succeed')
+});
 
 app.use(cors());
 router(app);

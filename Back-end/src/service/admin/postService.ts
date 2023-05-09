@@ -25,7 +25,7 @@ class PostService {
 
     postFilter = async (filter) => {
         try {
-            let filterPost = await this.postRepository.find({
+            let filterPost = await this.postRepository.findBy({
                 where: {category: Like(`${filter}%`)}
             })
             return filterPost;

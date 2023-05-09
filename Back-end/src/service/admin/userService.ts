@@ -3,9 +3,6 @@ import {User} from "../../models/User";
 import {Like} from "typeorm";
 
 class AdminService {
-    export
-    default
-    new
     private adminRepository;
 
     constructor() {

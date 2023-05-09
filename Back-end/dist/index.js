@@ -14,7 +14,9 @@ const app = (0, express_1.default)();
 app.use(body_parser_1.default.json());
 app.use(body_parser_1.default.urlencoded({ extended: true }));
 app.use((0, cookie_parser_1.default)(process.env.USER_CODE_SECRET));
-(0, data_source_1.connectDB)();
+(0, data_source_1.connectDB)().then(() => {
+    console.log('Connect Database Succeed');
+});
 app.use((0, cors_1.default)());
 (0, routers_1.default)(app);
 app.listen(PORT, () => {
