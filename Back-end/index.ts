@@ -8,10 +8,6 @@ import cors from "cors"
 const PORT = 3000;
 const app = express();
 
-
-
-
-
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(cookieParser(process.env.USER_CODE_SECRET))
